@@ -1,0 +1,255 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8">
+        <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css">
+        <link href="favicon.ico" rel="icon">
+        <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+        <script src="jQuery.style.switcher.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <title>Dienstzeitrechner</title>
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="page-header">
+                <a href="index.html"><h1>Dienstzeitrechner</h1></a>
+            </div>
+
+            <!-- Theme Switches -->
+            <div class="text-right">
+                <div class="btn-group">
+                    <button href="#" type="button" class="theme-link btn btn-default btn-sm " data-theme="original" id="default">Original</button>
+                    <button href="#" type="button" class="theme-link btn btn-default btn-sm active" data-theme="xmas" id="winter">X-Mas</button>
+                </div>
+            </div>
+
+            <div class="form-group form-worktime">
+                <div class="row">
+                    <div class="text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-lg" id="30">6:00</button>
+                            <button type="button" class="btn btn-default btn-lg" id="35">7:00</button>
+                            <button type="button" class="btn btn-default btn-lg active" id="39">7:48</button>
+                            <button type="button" class="btn btn-default btn-lg" id="40">8:00</button>
+                            <button type="button" class="btn btn-default btn-lg" id="41">8:12</button>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="text-center">
+                            <label for="start">Dienstbeginn</label>
+                        </div>
+                        <input type="time" id="start" class="input-lg center-block form-control input-time" required autofocus>
+                    </div>
+
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="text-center">
+                            <label for="end">Dienstende</label>
+                        </div>
+                        <input type="time" id="end" class="input-lg center-block form-control input-time">
+                    </div>
+
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="text-center">
+                            <label for="pause">Pausenzeit</label>
+                        </div>
+                        <input type="time" id="pause" value="00:00" class="input-lg center-block form-control input-time">
+                    </div>
+
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="text-center">
+                            <label for="soll">Regeldienstzeit</label>
+                        </div>
+                        <input type="time" id="soll" value="07:48" class="input-lg center-block form-control input-time">
+                    </div>
+
+                    <div class="col-sm-1 col-xs-1"></div>
+                    <div class="col-sm-10 col-xs-10">
+                        <button type="button" id="calculate" class="btn btn-lg btn-primary btn-block center-block">Berechnen</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="jumbotron form-worktime" id="result">
+                <div class="row container">
+                    <div class="col-sm-4 col-xs-4 text-center">
+                        <label for="worktime">Dienstszeit</label>
+                        <p id="worktime">0:00</p>
+                    </div>
+
+                    <div class="col-sm-4 col-xs-4 text-center">
+                        <label for="difference">Differenz</label>
+                        <p id="difference">0:00</p>
+                    </div>
+
+                    <div class="col-sm-4 col-xs-4 text-center">
+                        <label for="percentage">Prozentual</label>
+                        <p id="percentage">0%</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+
+            <div id="accordion" class="panel-group">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab">
+                        <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-target="#preview" data-parent="#accordion" aria-controls="#preview" role="button">Vorschau</a>
+                        </h4>
+                    </div>
+                    <div id="preview" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body">
+                            <h4><span class="label label-info">Planung</span></h4>
+                            <ul>
+                                <li><s>Vorauswahl der täglichen Regelarbeitszeit.</s> <span class="glyphicon glyphicon-ok"></span></li>
+                                <li>Ablösung des "Berechnen"-Buttons.</li>
+                                <li><s>Anzeige der prozentualen Arbeitszeit.</s> <span class="glyphicon glyphicon-ok"></span></li>
+                                <li><s>Einführung eines Favicons.</s> <span class="glyphicon glyphicon-ok"></span></li>
+                                <li>Einige Überraschungen, die noch nicht veröffentlicht werden.</li>
+                                <li><s>Anpassung des Designs vom Akkordion.</s> <span class="glyphicon glyphicon-ok"></span></li>
+                                <li>Hinzufügen eines "Zurücksetzen"-Buttons.</li>
+                                <hr>
+                                <div class="text-center">
+                                    <a href="mailto:paul.lange1992@googlemail.com?subject=Vorschlag%20zur%20Verbesserung%20des%20Arbeitszeitrechners"><button class="btn btn-lg btn-default">Vorschläge einreichen</button></a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab">
+                        <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-target="#v2-0-0" data-parent="#accordion" aria-controls="#v2-0-0" role="button">Version 2.0.0</a>
+                        </h4>
+                    </div>
+                    <div id="v2-0-0" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body">
+                            <h4><span class="label label-danger">Highlight</span></h4>
+                            <ul>
+                                <li>Passend zur Adventszeit wurde erstmalig ein <b>x-mas-Theme</b> eingeführt.</li>
+                                <li>Das Theme kann im oberen Abschnitt gewechselt werden.</li>
+                            </ul>
+                            <h4><span class="label label-success">Neu</span></h4>
+                            <ul>
+                                <li>Der <b>Arbeitszeitrechner</b> heißt ab sofort <b><i>Dienstzeitrechner</i></b>.</li>
+                                <li>Das Wort <b><i>Arbeit</i></b> wurde überall durch das treffendere Wort <b><i>Dienst</i></b> ersetzt.</li>
+                                <li>Das <b>Design</b> des <b>Akkordions</b> wurde dem Seitendesign angepasst.</li>
+                                <li>Zur <b>Vorauswahl</b> wurde ein <b>weiterer Standard-Wert</b> (7:00) hinzugefügt.</li>
+                                <li>Der <b>Footer</b> wurde am unteren Rand der Seite <b>fixiert</b>.</li>
+                                <li>Die <b>Labels</b> haben neue, passendere <b>Bezeichnnungen</b> erhalten.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                      <a class="collapsed" data-toggle="collapse" data-target="#v1-1-0" data-parent="#accordion" aria-controls="#v1-1-0">Version 1.2.0</a>
+                    </h4>
+                  </div>
+                  <div id="v1-1-0" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <h4><span class="label label-success">Neu</span></h4>
+                        <ul>
+                            <li>Zur <b>Vorauswahl der Regelarbeitszeit</b> wurde eine Button-Group oberhalb der Eingabefelder hinzugefügt (Als Standard Regelarbeitszeit ist weiterhin 7:48h vorausgewählt).</li>
+                            <li>Das Standard-Favicon wurde gegen ein <b>neues Favicon</b> ausgetauscht.</li>
+                            <li>Zusätzlich zur Differenz wurde die <b>prozentuale Anzeige</b> der Arbeitszeit im Vergleich zur Regelarbeitszeit hinzugefügt.</li>
+                            <li>Neu hinzugefügt wurde ebenso ein <b>positives Vorzeichen</b> bei positiver Differenz.</li>
+                            <li>Das Akkordion wird nun standardmäßig ungeöffnet dargestellt.</li>
+                        </ul>
+                        <h4><span class="label label-warning">Behoben</span></h4>
+                        <ul>
+                            <li>Der Standard-Wert für Pause wurde von <b>"--:--"</b> auf <b>"00:00"</b> geändert.
+                            <li>Ein Fehler, der dazu führte, dass bei identischer Arbeits- und Regelarbeitszeit eine negative Differenz angezeigt wird, wurde behoben.</li>
+                        </ul>
+                        <hr>
+                            <div class="text-center">
+                                <a href="v1.2.0" target="_blank"><button class="btn btn-lg btn-default" >Link zur Version 1.2.0</button></a>
+                            </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                      <a class="collapsed" data-toggle="collapse" data-target="#v1-0-0" data-parent="#accordion">Version 1.1.0</a>
+                    </h4>
+                  </div>
+                  <div id="v1-0-0" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <h4><span class="label label-success">Neu</span></h4>
+                        <ul>
+                            <li>Das Jumbotron zur Ergebnisanzeige wird nun dauerhaft angezeigt.</li>
+                            <li>Nach Eingabe des Beginns der Arbeitszeit wird das Feld "Ende" automatisch mit dem Soll-Ende gefüllt.</li>
+                            <li>Javascript nutzt nun die js-Bibliothek jQuery.</li>
+                            <li>Das Panel "Hinweise zum Arbeitszeitrechner" wurde entfernt.</li>
+                            <li>Einführung des "Akkordions" zur Anzeige der Changelogs mit Verlinkungen zu Vorgängerversionen.</li>
+                            <li>Anzeige von geplanten Features für die zukünftigen Versionen.</li>
+                            <li>Button zur Einreichung weiterer Vorschläge (im Akkordion unter <b>"Zukünftige Versionen"</b>).</li>
+                        </ul>
+                        <h4><span class="label label-warning">Behoben</span></h4>
+                        <ul>
+                            <li>Berechnung von Arbeitszeiten über 9:00h funktioniert nun ohne falsche Berechnung.</li>
+                            <li>Die Pausenzeit kann nun geändert werden, ohne das der automatisch der Standard-Wert eingetragen wird.</li>
+                            <li>Änderungen der Soll-Zeit führen nicht mehr zu falschen Ergebnissen.</li>
+                        </ul>
+                        <hr>
+                            <div class="text-center">
+                                <a href="v1.1.0" target="_blank"><button class="btn btn-lg btn-default" >Link zur Version 1.1.0</button></a>
+                            </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                      <a class="collapsed" data-toggle="collapse" data-target="#v1-2-0" data-parent="#accordion">Version 1.0.0</a>
+                    </h4>
+                  </div>
+                  <div id="v1-2-0" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <h4><span class="label label-success">Neu</span></h4>
+                        <ul>
+                            <li>Berechnung der reinen Arbeitszeit, abzüglich der Pause</li>
+                            <li>Anzeige der Differenz zur Soll-Arbeitszeit</li>
+                            <li>Vollautomatische Vorauswahl der Standard-Pausenzeit, sobald Beginn und Ende festgelegt sind</li>
+                            <li>Festlegung einer anderen Soll-Arbeitszeit (Standard: 7:48h)</li>
+                            <li>Autofocus auf Arbeitszeitbeginn bei jedem Laden der Seite</li>
+                            <li>Anzeige von grundlegenden Hinweisen zum Arbeitszeitrechner (Hinweise können nur durch Neuladen der Seite ausgeblendet werden)</li>
+                            <li>Verwendung des von Twitter Bootstrap zur Verfügung gestellten GRID-Systems zur Platzierung der Eingabemasken.</li>
+                            <hr>
+                            <div class="text-center">
+                                <a href="v1.0.0/" target="_blank"><button class="btn btn-lg btn-default" >Link zur Version 1.0.0</button></a>
+                            </div>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container text-center">
+                <p class="text-muted">©2016 Paul Lange | Dienstzeitrechner 2.0.0 | <a href="impressum.html">Impressum</a></p>
+            </div>
+        </footer>
+        <script src="js/dzr.js" type="text/javascript"></script>
+        <script src="js/themes.js" type="text/javascript"></script>
+        <script src="js/xmas.js" type="text/javascript" id="xmas"></script>
+    </body>
+</html>
