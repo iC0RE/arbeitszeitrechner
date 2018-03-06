@@ -8,9 +8,9 @@ var scripts = {
 }
 
 $(function(){
-    var themesheet = $('<link href="'+themes['xmas']+'" rel="stylesheet" class="theme-sheet"/>');
+    var themesheet = $('<link href="'+themes['original']+'" rel="stylesheet" class="theme-sheet"/>');
 
-    var themescript = $('<script src="'+scripts['xmas']+'" type="text/javascript" class="theme-script"></script>');
+    var themescript = $('<script src="'+scripts['original']+'" type="text/javascript" class="theme-script"></script>');
 
     themesheet.appendTo('head');
     themescript.append('body');
