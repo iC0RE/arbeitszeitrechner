@@ -80,7 +80,7 @@
         doResponsive();
 
         function prepare() {
-                element.html('<div class="ClassyCountdown-wrapper">' +
+                element.html('<div class="ClassyCountdown-wrapper container">' +
                     /*'<div class="ClassyCountdown-days">' +
                         '<input type="text" />' +
                         '<span class="ClassyCountdown-value"><div></div><span></span></span>' +
