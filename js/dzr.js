@@ -455,15 +455,15 @@ $(document).ready(function () {
             console.log("IF");
             $('#countdown15').remove();
             console.log("Inhalt entfernt.");
-            $('#cc-box').html('<div id="countdown15" class="ClassyCountdownDemo"></div>');
+            $('#cc-box').html('<div id="countdown15" class="ClassyCountdownDemo container"></div>');
             $('#countdown15').ClassyCountdown({
-                theme: "flat-colors",
+                theme: "flat-colors-wide",
                 end: $.now() + remainingSeconds
             });
         } else {
             console.log("ELSE");
             $('#countdown15').ClassyCountdown({
-                theme: "flat-colors",
+                theme: "flat-colors-wide",
                 end: $.now() + remainingSeconds
             });
         }
@@ -864,6 +864,5 @@ $(document).ready(function () {
             console.log("Time out!");
         }
     });
-
 
 });
