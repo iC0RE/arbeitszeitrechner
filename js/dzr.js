@@ -113,7 +113,7 @@ $(document).ready(function () {
         var diff_hours = end_hours - start_hours;
         var diff_mins = end_mins - start_mins;
 
-        // Bei negativer Differenz: +60min & -1h
+        // Bei negativer Differenz: + 60 min & -1h
         if (diff_mins < 0) {
             diff_hours--;
             diff_mins = diff_mins + 60;
@@ -167,7 +167,7 @@ $(document).ready(function () {
     }
 
     // Berechnet die Differenz zwischen IST und SOLL
-    function getDifference() {
+    function getTimeDifference() {
         var soll_time = getSoll_time();
         var work_time = getWork_time();
 
@@ -240,108 +240,10 @@ $(document).ready(function () {
     function setDefault() {
         $('#pause').val("00:30");
     }
-    /*
-    function getRegularWorking_time(){
-        var start_time = getStart_time();
-        var soll_time = getSoll_time();
-
-        start_hours = parseInt(start_time[0],10);
-        start_mins = parseInt(start_time[1],10);
-        soll_hours = parseInt(soll_time[0],10);
-        soll_mins = parseInt(soll_time[1],10);
-
-        if(soll_hours == 6 && soll_mins > 30){
-            var pause_mins = 30;
-        }else if(soll_hours > 6){
-            if(soll_hours == 9 && soll_mins > 45){
-                var pause_mins = 45;
-            }else if(soll_hours > 9){
-                var pause_mins = 45;
-            }else{
-                var pause_mins = 30;
-            }
-        }else{
-            var pause_mins = 0;
-        }
-
-        var regular_hours = start_hours + soll_hours;
-        var regular_mins = start_mins + soll_mins + pause_mins;
-
-        if(regular_mins >= 60){
-            regular_mins = regular_mins - 60;
-            regular_hours ++;
-        }
-        var regular_time = [regular_hours, regular_mins];
-        return regular_time;
-    }
-    */
-    /*
-    $("#calculate").click(function(){
-        var diff_time = getDifference();
-        console.log(diff_time);
-        var work_time = getWork_time();
-        var percentage = getPercentage();
-
-        var diff_hours = diff_time[0];
-        var diff_mins = diff_time[1];
-        var diff_positive = diff_time[2];
-
-        if(diff_mins < 10){
-            diff_time = diff_hours + ":0" + diff_mins;
-        }else{
-            diff_time = diff_hours + ":" + diff_mins;
-        }
-
-        if(diff_positive == false && diff_hours == 0){
-            $("#difference").html("-" + diff_time);
-        }else if(diff_hours == 0 && diff_mins == 0){
-            $("#difference").html(diff_time);
-        }else if (diff_positive == false && diff_hours < 0){
-            $("#difference").html(diff_time);
-        }else{
-            $("#difference").html("+" + diff_time);
-        }
-
-        var work_hours = work_time[0];
-        var work_mins = work_time[1];
-        if(work_mins < 10){
-            work_time = work_hours + ":0" + work_mins;
-        }else{
-            work_time = work_hours + ":" + work_mins;
-        }
-        $("#worktime").html(work_time);
-        $("#percentage").html(percentage + "%");
-    });
-    */
 
     $("#choose_time").click(function () {
         setSoll_time;
     })
-
-    /*$("#start").focusout(function(){
-        //setDefault();
-        var regular_time = getRegularWorking_time();
-        var regular_hours = regular_time[0];
-        var regular_mins = regular_time[1];
-
-        if(regular_hours >= 24){
-            regular_hours = regular_hours - 24;
-        }
-
-        if(regular_mins >= 60){
-            regular_mins = regular_mins - 60;
-            regular_hours ++;
-            if(regular_mins < 10){
-                regular_mins = "0" + regular_mins;
-            }
-        }
-        $("#end").val(regular_hours + ":" + regular_mins);
-        setDefault();
-    })*/
-
-    /*$("#end").focusout(function(){
-        setDefault();
-    })*/
 
     $("#pause").focusin(function () {
         // Wenn Input leer, dann setDefault ausführen
@@ -409,9 +311,9 @@ $(document).ready(function () {
         // gibt die aktuelle Zeit in Millisekunden (since Epoch) zurück
         var curr_time = new Date();
 
-        console.log("Start Sekunden: " + start_time.getTime());
-        console.log("Aktuelle Sekunden: " + curr_time.getTime());
-        console.log("Ende Sekunden: " + end_time.getTime());
+        //console.log("Start Sekunden: " + start_time.getTime());
+        //console.log("Aktuelle Sekunden: " + curr_time.getTime());
+        //console.log("Ende Sekunden: " + end_time.getTime());
 
 
         // Liest die aktuellen Werte für Stunden, Minuten und Sekunden aus
@@ -455,23 +357,23 @@ $(document).ready(function () {
             console.log("IF");
             $('#countdown15').remove();
             console.log("Inhalt entfernt.");
-            $('#cc-box').html('<div id="countdown15" class="ClassyCountdownDemo"></div>');
+            $('#cc-box').html('<div id="countdown15" class="ClassyCountdownDemo container"></div>');
             $('#countdown15').ClassyCountdown({
-                theme: "flat-colors",
+                theme: "flat-colors-wide",
                 end: $.now() + remainingSeconds
             });
         } else {
             console.log("ELSE");
             $('#countdown15').ClassyCountdown({
-                theme: "flat-colors",
+                theme: "flat-colors-wide",
                 end: $.now() + remainingSeconds
             });
         }
     }
 
-
+    // Funktion zur Berechnung der Arbeitszeit, der Differenz zur Regeldienstzeit und des prozentualen Anteils der Arbeitszeit an der Regeldienstzeit
     function calculate() {
-        var diff_time = getDifference();
+        var diff_time = getTimeDifference();
         var work_time = getWork_time();
         var percentage = getPercentage();
 
@@ -517,6 +419,7 @@ $(document).ready(function () {
         }
     }
 
+    // Berechnet das Dienstende anhand der Start-, Pausen-, und Soll-Dienstzeit
     function set_end() {
         var start_time = getStart_time();
         var pause_time = getPause_time();
@@ -536,13 +439,28 @@ $(document).ready(function () {
             end_hours = end_hours - 24;
         }
 
-        if (end_mins >= 60) {
-            end_mins = end_mins - 60;
-            end_hours++;
-            if (end_mins < 10) {
-                end_mins = "0" + end_mins;
-            }
+        //console.log("end_mins: " + end_mins);
+        // Wenn Start-Minuten + Pausen-Minuten + Soll-Minuten >= 120 sind
+        if (end_mins >= 120) {
+            //console.log("if end_mins >= 120 gestartet");
+            end_mins = end_mins - 120;
+            //console.log("end_mins: " + end_mins);
+            end_hours += 2;
         }
+
+        // Wenn Start-Minuten + Pausen-Minuten + Soll-Minuten >= 60 sind
+        if (end_mins >= 60) {
+            //console.log("if end_mins >= 60 gestartet");
+            end_mins = end_mins - 60;
+            //console.log("end_mins: " + end_mins);
+            end_hours++;
+        }
+
+
+        if (end_mins < 10) {
+            end_mins = "0" + end_mins;
+        }
+
         $("#end").val(end_hours + ":" + end_mins);
     }
 
@@ -864,6 +782,5 @@ $(document).ready(function () {
             console.log("Time out!");
         }
     });
-
 
 });
