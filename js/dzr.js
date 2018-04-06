@@ -783,4 +783,9 @@ $(document).ready(function () {
         }
     });
 
+    $("#start_Tour").click(function () {
+        introJs().refresh();
+        introJs().start();
+    })
+
 });
