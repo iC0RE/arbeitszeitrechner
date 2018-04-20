@@ -1,48 +1,90 @@
-<html>
+<!doctype html>
+<html lang="de">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8">
-    <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css">
-    <link href="favicon.ico" rel="icon">
-    <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
-    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
-    <script src="jQuery.style.switcher.js"></script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <title>ChangeLog - DZR</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//googletagmanager.com/gtag/js?id=UA-113872576-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-113872576-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dienstzeitrechner">
+    <meta name="author" content="Paul">
+    <link rel="icon" href="favicon.ico">
+
+    <title>ChangeLog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/introjs.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/jquery.classycountdown.css" rel="stylesheet" type="text/css">
+    <style>
+    </style>
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">Dienstzeitrechner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Über</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" id="start_Tour">Funktionsweise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="changelog.html" target="_blank">ChangeLog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontakt</a>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Suche" aria-label="Suche">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Suche</button>
+            </form> -->
+        </div>
+    </nav>
+
     <div class="container">
         <div class="page-header">
             <a href="index.html">
-                <h1>Dienstzeitrechner - ChangeLog</h1>
+                <span class="display-3">ChangeLog</span>
             </a>
         </div>
-        <div id="accordion" class="panel-group">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
-                    <a data-toggle="collapse" data-target="#preview" data-parent="#accordion" aria-controls="#preview" role="button">
+        <div id="accordion">
+            <div class="card">
+                <a class="btn-link collapsed" data-toggle="collapse" data-target="#preview" aria-expanded="false" aria-controls="preview">
+                    <div class="card-header" id="headingPreview">
                         <div class="row">
-                            <div class="col-sm-4 col-xs-6">
-                                <h4 class="panel-title">Vorschau</h4>
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0 ">Vorschau</h5>
                             </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-center">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-right">
-                                    <h4 class="panel-title">...</h4>
-                                </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">...</h5>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div id="preview" class="panel-collapse collapse" role="tabpanel">
-                    <div class="panel-body">
-                        <h4><span class="label label-info">Planung</span></h4>
+                    </div>
+                </a>
+                <div id="preview" class="collapse" aria-labelledby="headingPreview" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-info">Planung</span></h4>
                         <ul>
                             <li><s>Vorauswahl der täglichen Regelarbeitszeit.</s> <span class="glyphicon glyphicon-ok"></span></li>
                             <li><s>Ablösung des "Berechnen"-Buttons.</s> <span class="glyphicon glyphicon-ok"></span></li>
@@ -64,74 +106,89 @@
                 </div>
             </div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
-                    <a data-toggle="collapse" data-target="#v4-0" data-parent="#accordion" aria-controls="#v4-0" role="button">
+            <div class="card">
+                <a class="btn-link" data-toggle="collapse" data-target="#v4.1" aria-expanded="true" aria-controls="v4.1">
+                    <div class="card-header" id="headingv4.1">
                         <div class="row">
-                            <div class="col-sm-4 col-xs-6">
-                                <h4 class="panel-title">Version 4.0</h4>
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0">Version 4.1</h5>
                             </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-center">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-right">
-                                    <h4 class="panel-title">09.02.18</h4>
-                                </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">xx.xx.xx</h5>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div id="v4-0" class="panel-collapse collapse" role="tabpanel">
-                    <div class="panel-body">
-                        <h4><span class="label label-warning">Behoben</span></h4>
+                    </div>
+                </a>
+                <div id="v4.1" class="collapse show" aria-labelledby="headingv4.1" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-warning">Behoben</span></h4>
                         <ul>
-                            <li>Dieses Update enthält keine Fehlerbehebungen.</li>
+                            <li>Ein Fehler bei der automatischen Berechnung der Endzeit wurde behoben. Innerhalb eines bestimmten Minutenzeitraums kam es zu einer fehlerhaften Rückgabe.</li>
                         </ul>
-                        <h4><span class="label label-success">Neu</span></h4>
+                        <h4><span class="badge badge-success">Neu</span></h4>
                         <ul>
-                            <li>Für die <b>Pausenzeit</b> wurden (analog zur Regeldienstzeit) <b>Vorauswahl-Buttons</b> hinzugefügt.</li>
-                            <li>Die <b>Berechnung</b> der Dienstzeit erfolgt nun direkt nach Eingabe des <b>Dienstbeginns</b>.<br>
-                            Bisher wurde beim Fokussieren des <b>Pausenfeldes</b> automatisch der Standard-Pausenwert eingetragen und erst beim Fokussieren des Feldes <b>Dienstzeitende</b> die Berechnungen durchgeführt.</li>
-                        </ul>
-                        <h4><span class="label label-info">WOW!</span></h4>
-                        <ul>
-                            <li>Auf Wunsch einiger Nutzer wurde ein <b><u>Countdown</u></b> hinzugefügt.<br>
-                                Dieser wird bei Änderung vollautomatisch aktualisiert und zeigt die Zeit bis zum Dienstschluss sowohl in <b>Zahlen</b>, als auch <b>grafisch</b> (Animierte Kreise) an.</li>
+                            <li><b>Design:</b> Der Arbeitszeitrechner verwendet ab sofort <b>Bootstrap 4.0.0</b></li>
+                            <li><b>Navigation:</b> Eine Navigation-Bar wurde eingeführt. Hierüber ist neben dem <b>ChangeLog</b> (welches vorher über den Footer erreichbar war) auch ein Link für Inormationen zum <b>Arbeitszeitrechner</b>, das neue Feature <b>Funktionsweise</b>, sowie das neue <b>Kontakt-Formular</b> erreichbar.</li>
+                            <li><b>Über:</b> ...</li>
+                            <li><b>Funktionsweise:</b> Mittels <b>Funktionsweise</b> wird man Schritt für Schritt durch den Arbeitszeitrechner geführt.</li>
+                            <li><b>Kontakt:</b> ...</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
-                    <a data-toggle="collapse" data-target="#v3-0" data-parent="#accordion" aria-controls="#v3-0" role="button">
+            <div class="card">
+                <a class="btn-link" data-toggle="collapse" data-target="#v4.0" aria-expanded="true" aria-controls="v4.0">
+                    <div class="card-header" id="headingv4.0">
                         <div class="row">
-                            <div class="col-sm-4 col-xs-6">
-                                <h4 class="panel-title">Version 3.0</h4>
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0">Version 4.0</h5>
                             </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-center">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-right">
-                                    <h4 class="panel-title">02.10.17</h4>
-                                </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">09.02.18</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
+                <div id="v4.0" class="collapse show" aria-labelledby="headingv4.0" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-warning">Behoben</span></h4>
+                        <ul>
+                            <li>Dieses Update enthält keine Fehlerbehebungen.</li>
+                        </ul>
+                        <h4><span class="badge badge-success">Neu</span></h4>
+                        <ul>
+                            <li>Für die <b>Pausenzeit</b> wurden (analog zur Regeldienstzeit) <b>Vorauswahl-Buttons</b> hinzugefügt.</li>
+                            <li>Die <b>Berechnung</b> der Dienstzeit erfolgt nun direkt nach Eingabe des <b>Dienstbeginns</b>.<br> Bisher wurde beim Fokussieren des <b>Pausenfeldes</b> automatisch der Standard-Pausenwert eingetragen und erst beim Fokussieren des Feldes <b>Dienstzeitende</b> die Berechnungen durchgeführt.</li>
+                        </ul>
+                        <h4><span class="badge badge-info">WOW!</span></h4>
+                        <ul>
+                            <li>Auf Wunsch einiger Nutzer wurde ein <b><u>Countdown</u></b> hinzugefügt.<br> Dieser wird bei Änderung vollautomatisch aktualisiert und zeigt die Zeit bis zum Dienstschluss sowohl in <b>Zahlen</b>, als auch <b>grafisch</b> (Animierte Kreise) an.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="v3-0" class="panel-collapse collapse" role="tabpanel">
-                    <div class="panel-body">
-                        <h4><span class="label label-warning">Behoben</span></h4>
+            </div>
+
+            <div class="card">
+                <a class="btn-link" data-toggle="collapse" data-target="#v3.0" aria-expanded="true" aria-controls="v3.0">
+                    <div class="card-header" id="headingv3.0">
+                        <div class="row">
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0 ">Version 3.0</h5>
+                            </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">02.10.17</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div id="v3.0" class="collapse" aria-labelledby="headingv3.0" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-warning">Behoben</span></h4>
                         <ul>
                             <li>Mehrere Fehler, die bei der automatischen Berechnung für fehlerhaftes Zurücksetzen und falsche Werte sorgten, wurden behoben. (onFocus)</li>
                         </ul>
-                        <h4><span class="label label-success">Neu</span></h4>
+                        <h4><span class="badge badge-success">Neu</span></h4>
                         <ul>
                             <li>Der <b>"Berechnen"-Button</b> wird ersatzlos entfernt.<br>Bei jeder Änderung der Werte wird die Ausgabe neu berechnet.</li>
                             <li>Als <b>Standard-Pausen-Wert</b> wird automatisch 00:30 eingetragen, wenn zuvor keine Zeit festgelegt wurde.</li>
@@ -147,33 +204,26 @@
                 </div>
             </div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
-                    <a data-toggle="collapse" data-target="#v2-0-1" data-parent="#accordion" aria-controls="#v2-0-1" role="button">
+            <div class="card">
+                <a class="btn-link" data-toggle="collapse" data-target="#v2.0.1" aria-expanded="true" aria-controls="v2.0.1">
+                    <div class="card-header" id="headingv2.0.1">
                         <div class="row">
-                            <div class="col-sm-4 col-xs-6">
-                                <h4 class="panel-title">Version 2.0.1</h4>
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0 ">Version 2.0.1</h5>
                             </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-center">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-right">
-                                    <h4 class="panel-title">03.03.17</h4>
-                                </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">03.03.17</h5>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div id="v2-0-1" class="panel-collapse collapse" role="tabpanel">
-                    <div class="panel-body">
-                        <h4><span class="label label-warning">Behoben</span></h4>
+                    </div>
+                </a>
+                <div id="v2.0.1" class="collapse" aria-labelledby="headingv2.0.1" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-warning">Behoben</span></h4>
                         <ul>
                             <li>Ein Fehler, der bei der automatischen Berechnung des Dienstzeitendes auftrat, wurde behoben. (onFocus "Dienstzeitende")</li>
                         </ul>
-                        <h4><span class="label label-success">Neu</span></h4>
+                        <h4><span class="badge badge-success">Neu</span></h4>
                         <ul>
                             <li>Als Standard-Theme wird nun wieder das "Original" angezeigt. Alternativ kann weiterhin auf "x-Mas" umgeschalten werden.</li>
                         </ul>
@@ -186,34 +236,27 @@
             </div>
 
 
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
-                    <a class="collapsed" data-toggle="collapse" data-target="#v2-0" data-parent="#accordion" aria-controls="#v2-0" role="button">
+            <div class="card">
+                <a class="btn-link" data-toggle="collapse" data-target="#v2.0" aria-expanded="true" aria-controls="v2.0">
+                    <div class="card-header" id="headingv2.0">
                         <div class="row">
-                            <div class="col-sm-4 col-xs-6">
-                                <h4 class="panel-title">Version 2.0</h4>
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0 ">Version 2.0</h5>
                             </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-center">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-right">
-                                    <h4 class="panel-title">29.11.16</h4>
-                                </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">29.11.16</h5>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div id="v2-0" class="panel-collapse collapse" role="tabpanel">
-                    <div class="panel-body">
-                        <h4><span class="label label-danger">Highlight</span></h4>
+                    </div>
+                </a>
+                <div id="v2.0" class="collapse" aria-labelledby="headingv2.0" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-danger">Highlight</span></h4>
                         <ul>
                             <li>Passend zur Adventszeit wurde erstmalig ein <b>x-mas-Theme</b> eingeführt.</li>
                             <li>Das Theme kann im oberen Abschnitt gewechselt werden.</li>
                         </ul>
-                        <h4><span class="label label-success">Neu</span></h4>
+                        <h4><span class="badge badge-success">Neu</span></h4>
                         <ul>
                             <li>Der <b>Arbeitszeitrechner</b> heißt ab sofort <b><i>Dienstzeitrechner</i></b>.</li>
                             <li>Das Wort <b><i>Arbeit</i></b> wurde überall durch das treffendere Wort <b><i>Dienst</i></b> ersetzt.</li>
@@ -224,36 +267,28 @@
                         </ul>
                         <hr>
                         <div class="text-center">
-                            <a href="v2.0.1" target="_blank"><button class="btn btn-lg btn-default" >Link zur Version 2.0.1</button></a>
+                            <a href="v2.0" target="_blank"><button class="btn btn-lg btn-default" >Link zur Version 2.0</button></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
-                    <a class="collapsed" data-toggle="collapse" data-target="#v1-2" data-parent="#accordion" aria-controls="#v1-2" role="button">
+            <div class="card">
+                <a class="btn-link" data-toggle="collapse" data-target="#v1.2" aria-expanded="true" aria-controls="v1.2">
+                    <div class="card-header" id="headingv1.2">
                         <div class="row">
-                            <div class="col-sm-4 col-xs-6">
-                                <h4 class="panel-title">Version 1.2</h4>
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0 ">Version 1.2</h5>
                             </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-center">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-right">
-                                    <h4 class="panel-title">05.11.16</h4>
-                                </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">05.11.16</h5>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div id="v1-2" class="panel-collapse collapse" role="tabpanel">
-                    <div class="panel-body">
-                        <h4><span class="label label-success">Neu</span></h4>
+                    </div>
+                </a>
+                <div id="v1.2" class="collapse" aria-labelledby="headingv1.2" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-success">Neu</span></h4>
                         <ul>
                             <li>Zur <b>Vorauswahl der Regelarbeitszeit</b> wurde eine Button-Group oberhalb der Eingabefelder hinzugefügt (Als Standard Regelarbeitszeit ist weiterhin 7:48h vorausgewählt).</li>
                             <li>Das Standard-Favicon wurde gegen ein <b>neues Favicon</b> ausgetauscht.</li>
@@ -261,7 +296,7 @@
                             <li>Neu hinzugefügt wurde ebenso ein <b>positives Vorzeichen</b> bei positiver Differenz.</li>
                             <li>Das Akkordion wird nun standardmäßig ungeöffnet dargestellt.</li>
                         </ul>
-                        <h4><span class="label label-warning">Behoben</span></h4>
+                        <h4><span class="badge badge-warning">Behoben</span></h4>
                         <ul>
                             <li>Der Standard-Wert für Pause wurde von <b>"--:--"</b> auf <b>"00:00"</b> geändert.
                                 <li>Ein Fehler, der dazu führte, dass bei identischer Arbeits- und Regelarbeitszeit eine negative Differenz angezeigt wird, wurde behoben.</li>
@@ -275,29 +310,22 @@
             </div>
 
 
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
-                     <a class="collapsed" data-toggle="collapse" data-target="#v1-1" data-parent="#accordion" aria-controls="#v1-1" role="button">
+            <div class="card">
+                <a class="btn-link" data-toggle="collapse" data-target="#v1.1" aria-expanded="true" aria-controls="v1.1">
+                    <div class="card-header" id="headingv1.1">
                         <div class="row">
-                            <div class="col-sm-4 col-xs-6">
-                                <h4 class="panel-title">Version 1.1</h4>
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0 ">Version 1.1</h5>
                             </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-center">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-right">
-                                    <h4 class="panel-title">06.10.16</h4>
-                                </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">06.10.16</h5>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div id="v1-1" class="panel-collapse collapse" role="tabpanel">
-                    <div class="panel-body">
-                        <h4><span class="label label-success">Neu</span></h4>
+                    </div>
+                </a>
+                <div id="v1.1" class="collapse" aria-labelledby="headingv1.1" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-success">Neu</span></h4>
                         <ul>
                             <li>Das Jumbotron zur Ergebnisanzeige wird nun dauerhaft angezeigt.</li>
                             <li>Nach Eingabe des Beginns der Arbeitszeit wird das Feld "Ende" automatisch mit dem Soll-Ende gefüllt.</li>
@@ -307,7 +335,7 @@
                             <li>Anzeige von geplanten Features für die zukünftigen Versionen.</li>
                             <li>Button zur Einreichung weiterer Vorschläge (im Akkordion unter <b>"Zukünftige Versionen"</b>).</li>
                         </ul>
-                        <h4><span class="label label-warning">Behoben</span></h4>
+                        <h4><span class="badge badge-warning">Behoben</span></h4>
                         <ul>
                             <li>Berechnung von Arbeitszeiten über 9:00h funktioniert nun ohne falsche Berechnung.</li>
                             <li>Die Pausenzeit kann nun geändert werden, ohne das der automatisch der Standard-Wert eingetragen wird.</li>
@@ -322,29 +350,22 @@
             </div>
 
 
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab">
-                    <a class="collapsed" data-toggle="collapse" data-target="#v1-0" data-parent="#accordion" aria-controls="#v1-0" role="button">
+            <div class="card">
+                <a class="btn-link" data-toggle="collapse" data-target="#v1.0" aria-expanded="true" aria-controls="v1.0">
+                    <div class="card-header" id="headingv1.0">
                         <div class="row">
-                            <div class="col-sm-4 col-xs-6">
-                                <h4 class="panel-title">Version 1.0</h4>
+                            <div class="col text-left">
+                                <h5 class="mb-0 mt-0 ">Version 1.0</h5>
                             </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-center">
-                                    <span class="glyphicon glyphicon-chevron-down"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-xs-3">
-                                <div class="text-right">
-                                    <h4 class="panel-title">23.09.16</h4>
-                                </div>
+                            <div class="col text-right">
+                                <h5 class="mb-0 mt-0 ">23.09.16</h5>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div id="v1-0" class="panel-collapse collapse" role="tabpanel">
-                    <div class="panel-body">
-                        <h4><span class="label label-success">Neu</span></h4>
+                    </div>
+                </a>
+                <div id="v1.0" class="collapse" aria-labelledby="headingv1.0" data-parent="#accordion">
+                    <div class="card-body">
+                        <h4><span class="badge badge-success">Neu</span></h4>
                         <ul>
                             <li>Berechnung der reinen Arbeitszeit, abzüglich der Pause</li>
                             <li>Anzeige der Differenz zur Soll-Arbeitszeit</li>
@@ -362,16 +383,31 @@
                 </div>
             </div>
         </div>
+        <div class="footer-helper">
+        </div>
     </div>
+
     <footer class="footer">
         <div class="container text-center">
-            <p class="text-muted">©2016 Paul Lange | <a href="impressum.html">Impressum</a>
+            <span class="">©2016-2018 Paul Lange | Dienstzeitrechner 4.1 | <a href="impressum.html">Impressum</a></span>
         </div>
     </footer>
-    <script src="js/dzr.js" type="text/javascript"></script>
-    <script src="js/themes.js" type="text/javascript"></script>
-    <script src="js/xmas.js" type="text/javascript" id="xmas"></script>
 
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/dzr.js" type="text/javascript" async></script>
+    <script>
+        window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src=""></script>
+    <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+    <script src="js/jquery.knob.js"></script>
+    <script src="js/jquery.throttle.js"></script>
+    <script src="js/jquery.classycountdown.js"></script>
 </body>
 
 </html>
