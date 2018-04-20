@@ -108,6 +108,7 @@ body {
     color: #777;
 }
 
+<<<<<<< HEAD
 .btn-link:hover {
     color: #0056b3;
     text-decoration: none;
@@ -121,4 +122,27 @@ body {
     text-decoration: none;
     border-color: transparent;
     box-shadow: none;
+=======
+.modal-open .supreme-container {
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.btn-intro{
+    margin: .25rem;
+}
+
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
+  color: #fff;
+  text-decoration: none;
+>>>>>>> origin/master
 }

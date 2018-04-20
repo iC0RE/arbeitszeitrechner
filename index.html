@@ -25,6 +25,7 @@
     <link href="bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <link href="css/introjs.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/jquery.classycountdown.css" rel="stylesheet" type="text/css">
     <style>
@@ -45,10 +46,14 @@
                     <a class="nav-link" href="#">Über</a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link" href="#"id="start_Tour">Funktionsweise</a>
+=======
+                    <a class="nav-link" href="#" id="start_Tour">Funktionsweise</a>
+>>>>>>> origin/master
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ChangeLog</a>
+                    <a class="nav-link" href="changelog.html" target="_blank">ChangeLog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Kontakt</a>
@@ -62,7 +67,6 @@
     </nav>
 
     <main role="main" class="container">
-
         <div class="starter-template">
             <div class="form-group ">
                 <div class="container-fluid">
@@ -70,7 +74,7 @@
                         <div class="col">
                             <div class="text-center">
                                 <h5>Regeldienstzeit</h5>
-                                <div class="btn-group">
+                                <div class="btn-group introjs-showElement introjs-relativePosition" data-step="1" data-intro="Tägliche Soll-Arbeitszeit festlegen.">
                                     <button type="button" class="btn btn-light btn-md" id="30">6:00</button>
                                     <button type="button" class="btn btn-light btn-md" id="35">7:00</button>
                                     <button type="button" class="btn btn-light btn-md active" id="39">7:48</button>
@@ -83,7 +87,7 @@
                         <div class="col">
                             <div class="text-center">
                                 <h5>Pausenzeit</h5>
-                                <div class="btn-group">
+                                <div class="btn-group introjs-showElement introjs-relativePosition" data-step="2" data-intro="Pausenzeit auswählen.">
                                     <button type="button" class="btn btn-light btn-md" id="00min">0:00</button>
                                     <button type="button" class="btn btn-light btn-md active" id="30min">0:30</button>
                                     <button type="button" class="btn btn-light btn-md" id="45min">0:45</button>
@@ -100,21 +104,21 @@
                         <div class="text-center">
                             <label for="start">Dienstbeginn</label>
                         </div>
-                        <input type="time" id="start" class="input-lg center-block form-control input-time" required autofocus>
+                        <input type="time" id="start" class="input-lg center-block form-control input-time introjs-showElement introjs-relativePosition" required autofocus data-step="3" data-intro="Arbeitsbeginn eintragen.">
                     </div>
 
                     <div class="col-sm-3 col-6">
                         <div class="text-center">
                             <label for="pause">Pausenzeit</label>
                         </div>
-                        <input type="time" id="pause" class="input-lg center-block form-control input-time" value="00:30">
+                        <input type="time" id="pause" class="input-lg center-block form-control input-time introjs-showElement introjs-relativePosition" value="00:30" data-step="4" data-intro="Pausenzeit individuell anpassen (bei Bedarf).">
                     </div>
 
                     <div class="col-sm-3 col-6">
                         <div class="text-center">
                             <label for="end">Dienstende</label>
                         </div>
-                        <input type="time" id="end" class="input-lg center-block form-control input-time">
+                        <input type="time" id="end" class="input-lg center-block form-control input-time introjs-showElement introjs-relativePosition" data-step="5" data-intro="Endzeit wird automatisch berechnet.">
                     </div>
 
                     <div class="col-sm-3 col-6">
@@ -125,7 +129,7 @@
                     </div>
                 </div>
             </div>
-            <div class="jumbotron form-worktime" id="result">
+            <div class="jumbotron form-worktime introjs-showElement introjs-relativePosition" id="result" data-step="6" data-intro="Ergebnisse der Berechnung." data-tooltipclass="forLastStep">
                 <div class="text-center">
                     <div class="row container row-adaption">
                         <div class="col text-center">
@@ -170,6 +174,7 @@
     </script>
     <script src=""></script>
     <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+    <script src="js/intro.js"></script>
     <script src="js/jquery.knob.js"></script>
     <script src="js/jquery.throttle.js"></script>
     <script src="js/jquery.classycountdown.js"></script>

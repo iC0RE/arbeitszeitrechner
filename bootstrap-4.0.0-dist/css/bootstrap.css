@@ -2989,14 +2989,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-    color: #6c757d;
+    color: #6c757d !important;
     background-color: transparent;
     background-image: none;
     border-color: #6c757d;
 }
 
 .btn-outline-secondary:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: #6c757d;
     border-color: #6c757d;
 }
@@ -5647,6 +5647,11 @@ button.close {
 
 .modal-open {
     overflow: hidden;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
 }
 
 .modal {
