@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+
     $("#30").click(function () {
         $("#soll").val("06:00");
         $("#30").addClass("active");
@@ -787,5 +789,4 @@ $(document).ready(function () {
         introJs().refresh();
         introJs().start();
     })
-
 });
