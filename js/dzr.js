@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $("#30").click(function () {
         $("#soll").val("06:00");
         $("#30").addClass("active");
@@ -787,4 +788,22 @@ $(document).ready(function () {
         introJs().refresh();
         introJs().start();
     })
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 1500) {
+            $("#x-mas-Theme").addClass('fixed-element');
+        } else {
+            $("#x-mas-Theme").removeClass('fixed-element');
+        }
+    });
+
+    $(window).scroll(function (e) {
+        parallax();
+    });
+
+    function parallax() {
+        var scrolled = $(window).scrollTop();
+        $('.parallax').css('bottom', -(scrolled * 0.1) + 'px');
+    }
+
 });
