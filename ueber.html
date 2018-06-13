@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//googletagmanager.com/gtag/js?id=UA-113872576-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-113872576-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dienstzeitrechner">
+    <meta name="author" content="Paul">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Arbeitszeitrechner</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/introjs.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/jquery.classycountdown.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">Arbeitszeitrechner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="ueber.html">Über</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"id="start_Tour">Funktionsweise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="changelog.html">ChangeLog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Suche" aria-label="Suche">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Suche</button>
+            </form> -->
+        </div>
+    </nav>
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class=" mx-auto my-5">
+            <h1 class="display-4 font-weight-light">Vom Excel-Sheet zur Web-Anwendung</h1>
+            <p class="lead font-weight-normal">Erhalte Einblick in den Prozess der Entwicklung des Arbeitszeitrechners.</p>
+            <!-- <a class="btn btn-outline-secondary" href="#">Coming soon</a> -->
+        </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center text-white bg-dark">
+        <div class=" mx-auto my-5">
+            <h2 class="display-5">Wie alles begann</h2>
+            <p class="lead">Ein simples Excel-Sheet zur Berechnung der Arbeitszeit.</p>
+            <img src="images/excel-sheet.png" class="img-fluid rounded" alt="Responsive image">
+            <div class="my-3 py-3 text-left">
+                <p>Nach Beginn meiner Ausbildung im öffentlichen Dienst, schwirrten mir verschiedene Gedanken durch den Kopf.</p>
+                <ul>
+                    <li>... Wie bekomme ich heraus, wann ich Feierabend machen kann?</li>
+                    <li>... Wie wirkt sich Arbeitsbeginn und Pausenzeit auf meinen Feierabend aus?</li>
+                    <li>... Wann beginne ich am besten meinen Arbeitstag um zu einer bestimmten Uhrzeit wieder gehen zu können?</li>
+                    <li>... Wie viel Verlust mache ich, wenn ich zu einer bestimmten Uhrzeit Feierabend machen muss?</li>
+                </ul>
+                <p>Diese Fragen, die sich auf Grund der gleitenden Arbeitszeit ergaben, beschäftigten mich so sehr, dass ich zunächst ein <b>Excel-Sheet</b> zur Berechnung erstellte.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Der nächste Schritt</h2>
+            <p class="lead">Plattformunabhängigkeit.</p>
+            <div class="my-3 py-3 text-left">
+                <p>Zu den großen Nachteilen der Berechnung in einer Excel-Mappe gehören:</p>
+                <ul>
+                    <li>Die Abhängigkeit zur Software (Microsoft Office)</li>
+                    <li>Die Plattformunabhängigkeit (keine Unterstützung von Betriebssystemen für die es keine Microsoft Office Suite gibt)</li>
+                    <li>schlechte Verfügbarkeit des Arbeitszeitrechners (bspw. wenn man unterwegs ist, oder die Datei nicht in der Cloud gespeichert ist)</li>
+                </ul>
+                <p>Daher folgte schnell ein erster Entwurf einer Web-Anwendung zur reinen Berechnung der Arbeitszeit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center text-white bg-dark">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Arbeitszeitrechner 1.0</h2>
+            <p class="lead">Klick auf das Bild um die aller erste Version auszuprobieren.</p>
+            <div class="my-3 py-3">
+                <link rel="import" href="http://www.atryon.de/v1.0/">
+                <!--<iframe src="http://www.atryon.de/v1.0/" style="width: 100%; height: 40rem"></iframe>-->
+                <a href="http://www.atryon.de/v1.0/" target="_blank"><img src="images/v1.0.png" class="img-fluid rounded img-small" alt="Responsive image"></a>
+            </div>
+            <div class="my-3 py-3 text-left">
+                <p>Die erste Version des Arbeitszeitrechners bestand nur aus der Transformation des Excel-Arbeitszeitrechners in eine Webanwendung. Lediglich eine automatische Berechnung der Pausenzeit (in Abhängigkeit der Differenz von Beginn und Ende) wurde zusätzlich implementiert. Die erste Version war ausschließlich auf die Berechnung der Arbeitszeit für eine 39-Stunden-Woche ausgelegt.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-relative overflow-hidden p-2 p-md-5 m-md-3 text-center bg-light">
+        <div>
+            <h2 class="display-5">Weiterentwicklung</h2>
+            <p class="lead">Meilensteine des Arbeitszeitrechners.</p>
+            <div class="mt-3 pt-3 text-left">
+                <p>Mit der Zeit wurde der Funktionsumfang des Arbeitszeitrechners ausgebaut und um (mehr oder weniger) wichtige Features erweitert.</p>
+                <div class="row">
+                    <div class="col-12 col-sm-6 p-3">
+                        <p>In <b>Verion 1.1</b> wurde die <b>automatische Berechnung der Endzeit</b> (an Hand der Soll-Zeit) eingeführt. Der <b>AZR</b> verwendet seitdem die Jacascript-Bibliothek <b>jQuery</b>, was die Entwicklung stark vereinfachte. Das <b>Jumbotron</b> zur Anzeige der Ergebnisse wird nun dauerhaft angezeigt und für das ChangeLog wurde ein Akkordion implementiert.</p>
+                    </div>
+                    <div class="col-12 col-sm-6 p-2 vertical-horizontal-center">
+                        <img src="images/JQuery-Logo.svg" class="img-responsive img-fluid my-img" alt="jQuery-Logo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 p-3 vertical-horizontal-center">
+                        <img src="favicon.ico" class="img-fluid rounded img-small img-favicon" alt="Responsive image">
+                    </div>
+                    <div class="col-12 col-sm-6 p-3">
+                        <p>In der folgenden Version (<b>1.2</b>) wurde das Standard-<b>Favicon</b> gegen ein neues, simples <b>Clock-Icon</b> ersetzt. Weiterhin wurden die <b>Buttons zur Vorauswahl der Arbeitszeit</b>, sowie die <b>prozentuale Anzeige der Arbeitszeit</b>, hinzugefügt.</p>
+                    </div>
+                </div>
+                <h2 class="display-5 text-center">x-mas Theme</h2>
+            </div>
+        </div>
+
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="images/xmas-theme2.png" alt="x-mas Theme Image">
+            </div>
+        </div>
+        <p>Das xmas-Theme wurde mit Verion <b>2.0</b> zu Beginn der <b>Adventszeit im Jahr 2016</b> veröffentlicht. Außerdem wurde die Bezeichnung <b>Dienstzeitrechner</b> an Stelle von <b>Arbeitszeitrechner</b> eingeführt, ein neues Design für das <b>ChangeLog-Akkordion</b> sowie ein weiteres Vorauswahlfeld (7:00) hinzugefügt.</p>
+
+</div>
+        <div class="footer-helper">
+        </div>
+
+
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="">©2016-2018 Paul Lange | Arbeitszeitrechner 4.1 | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html" target="_blank">Datenschutz</a></span>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/dzr.js" type="text/javascript" async></script>
+    <script>
+        window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+        $(document).ready(function() {
+            $('.parallax').parallax();
+        });
+
+    </script>
+    <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+    <script src="js/intro.js"></script>
+    <script src="js/jquery.knob.js"></script>
+    <script src="js/jquery.throttle.js"></script>
+    <script src="js/jquery.classycountdown.js"></script>
+    <!-- Compiled and minified JavaScript for Materialize -->
+    <script src="materialize/js/materialize.js"></script>
+</body>
+
+</html>
