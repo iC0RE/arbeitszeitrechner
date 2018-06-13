@@ -4,50 +4,30 @@ $(document).ready(function () {
         $("#soll").val("06:00");
         $("#30").addClass("active");
         $("#35, #39, #40, #41").removeClass("active");
-        $("#soll").prop('disabled', true);
-        calculate();
-    })
-
-    $("#30").click(function () {
-        $("#soll").val("06:00");
-        $("#30").addClass("active");
-        $("#35, #39, #40, #41, #man").removeClass("active");
-        $("#soll").prop('disabled', true);
         calculate();
     })
     $("#35").click(function () {
         $("#soll").val("07:00");
         $("#35").addClass("active");
-        $("#30, #39, #40, #41, #man").removeClass("active");
-        $("#soll").prop('disabled', true);
+        $("#30, #39, #40, #41").removeClass("active");
         calculate();
     })
     $("#39").click(function () {
         $("#soll").val("07:48");
         $("#39").addClass("active");
-        $("#30, #35, #40, #41, #man").removeClass("active");
-        $("#soll").prop('disabled', true);
+        $("#30, #35, #40, #41").removeClass("active");
         calculate();
     })
     $("#40").click(function () {
         $("#soll").val("08:00");
         $("#40").addClass("active");
-        $("#30, #35, #39, #41, #man").removeClass("active");
-        $("#soll").prop('disabled', true);
+        $("#30, #35, #39, #41").removeClass("active");
         calculate();
     })
     $("#41").click(function () {
         $("#soll").val("08:12");
         $("#41").addClass("active");
-        $("#30, #35, #39, #40, #man").removeClass("active");
-        $("#soll").prop('disabled', true);
-        calculate();
-    })
-    $("#man").click(function () {
-        $("#man").addClass("active");
-        $("#30, #35, #39, #40, #41").removeClass("active");
-        $("#soll").prop('disabled', false);
-        $("#soll").focus();
+        $("#30, #35, #39, #40").removeClass("active");
         calculate();
     })
     $("#00min").click(function () {
