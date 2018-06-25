@@ -1,6 +1,6 @@
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -19,26 +19,30 @@ body {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: #f5f5f5;
 }
 
 /* Custom page CSS
 -------------------------------------------------- */
+
 /* Not required for template or sticky footer method. */
 
 body > .container {
-  padding: 60px 15px 0;
+    padding: 60px 15px 0;
 }
 
 .footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .footer-helper {
@@ -52,6 +56,7 @@ body > .container {
 }
 
 /*Deaktiviert wegen Sticky Footer*/
+
 /*html,
 body {
     height: 100%;
@@ -229,6 +234,7 @@ a:not([href]):not([tabindex]):focus {
     cursor: default;
     color: #999;
 }
+
 .parallax-container {
     position: relative;
     overflow: hidden;
