@@ -765,6 +765,7 @@ $(document).ready(function () {
     });
 
     $("#start_Tour").click(function () {
+        $('.introjs-relativePosition').addClass('introjs-showElement');
         introJs().refresh();
         introJs().start();
     })

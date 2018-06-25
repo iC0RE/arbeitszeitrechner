@@ -37,7 +37,7 @@
       /* Skip button label in tooltip box */
       skipLabel: 'Ende',
       /* Done button label in tooltip box */
-      doneLabel: 'Done',
+      doneLabel: 'Fertig',
       /* Hide previous button in the first step? Otherwise, it will be disabled button. */
       hidePrev: false,
       /* Hide next button in the last step? Otherwise, it will be disabled button. */
