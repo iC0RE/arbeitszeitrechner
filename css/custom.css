@@ -26,7 +26,8 @@ body {
     height: 60px;
     line-height: 60px;
     /* Vertically center the text there */
-    background-color: #f5f5f5;
+    background-color: #343a40;
+    opacity: 0.8;
 }
 
 /* Custom page CSS
@@ -195,9 +196,9 @@ a:not([href]):not([tabindex]):focus {
     }
 }
 
-.overflow-hidden {
+/*.overflow-hidden {
     overflow: hidden;
-}
+}*/
 
 .img-responsive {
     display: inline-block;
@@ -235,11 +236,11 @@ a:not([href]):not([tabindex]):focus {
     color: #999;
 }
 
-.parallax-container {
+/*.parallax-container {
     position: relative;
     overflow: hidden;
     height: 500px;
-}
+}*/
 
 .parallax-container .parallax {
     position: absolute;
@@ -262,4 +263,33 @@ a:not([href]):not([tabindex]):focus {
     transform: translate3d(0, 0, 0);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+}
+
+.fitted-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.fit-top-center {
+    object-position: top center;
+}
+
+.head-wrapper {
+    position: relative;
+}
+
+.head-text {
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    color: white;
+}
+
+.fitted-section {
+    height: calc(100vh - 60px);
+}
+
+.container-slim {
+    max-width: 650px;
 }
