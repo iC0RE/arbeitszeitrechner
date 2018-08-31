@@ -42,11 +42,15 @@ body > .container {
 .footer > .container {
     padding-right: 15px;
     padding-left: 15px;
-    overflow: auto;
+    overflow-y: auto !important;
+    overflow-x: hidden;
     white-space: nowrap;
 }
 
 .footer-helper {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
     height: 60px;
     padding-bottom: 80px;
 }
@@ -196,16 +200,12 @@ a:not([href]):not([tabindex]):focus {
     }
 }
 
-/*.overflow-hidden {
-    overflow: hidden;
-}*/
-
 .img-responsive {
     display: inline-block;
 }
 
 .vertical-horizontal-center {
-    display: flex;
+    /* display: flex; Auskommentiert für top + bottom in section */
     justify-content: center;
     align-items: center;
 }
@@ -235,12 +235,6 @@ a:not([href]):not([tabindex]):focus {
     cursor: default;
     color: #999;
 }
-
-/*.parallax-container {
-    position: relative;
-    overflow: hidden;
-    height: 500px;
-}*/
 
 .parallax-container .parallax {
     position: absolute;
@@ -287,9 +281,47 @@ a:not([href]):not([tabindex]):focus {
 }
 
 .fitted-section {
-    height: calc(100vh - 60px);
+    height: calc(100vh);
 }
 
 .container-slim {
-    max-width: 650px;
+    max-width: 500px;
+    margin: auto;
+}
+
+section{
+    width: 100%;
+}
+
+.upper {
+    height: 35%;
+    width: 100%;
+}
+
+.lower {
+    height: 65%;
+    width: 100%
+}
+
+.center-icon{
+    border: solid 2px;
+    border-radius: 20px;
+    padding: 20px;
+    width: 8rem;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+}
+
+.bootstrap-icon{
+    width: 8rem;
+    padding: 0px !important;
+    border: none !important;
+}
+
+.jquery-icon {
+    width: 16rem;
+    height: 8rem
 }
