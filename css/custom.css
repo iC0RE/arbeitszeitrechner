@@ -28,6 +28,7 @@ body {
     /* Vertically center the text there */
     background-color: #343a40;
     opacity: 0.8;
+    overflow-x: scroll !important;
 }
 
 /* Custom page CSS
@@ -42,8 +43,6 @@ body > .container {
 .footer > .container {
     padding-right: 15px;
     padding-left: 15px;
-    overflow-y: auto !important;
-    overflow-x: hidden;
     white-space: nowrap;
 }
 
@@ -289,7 +288,7 @@ a:not([href]):not([tabindex]):focus {
     margin: auto;
 }
 
-section{
+section {
     width: 100%;
 }
 
@@ -303,7 +302,7 @@ section{
     width: 100%
 }
 
-.center-icon{
+.center-icon {
     border: solid 2px;
     border-radius: 20px;
     padding: 20px;
@@ -315,7 +314,7 @@ section{
     top: 50%;
 }
 
-.bootstrap-icon{
+.bootstrap-icon {
     width: 8rem;
     padding: 0px !important;
     border: none !important;
@@ -324,4 +323,9 @@ section{
 .jquery-icon {
     width: 16rem;
     height: 8rem
+}
+
+.no-flex{
+    flex-grow: 0 !important;
+    margin: auto;
 }
