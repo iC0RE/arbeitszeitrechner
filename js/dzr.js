@@ -787,4 +787,6 @@ $(document).ready(function () {
         $('.parallax').css('bottom', -(scrolled * 0.1) + 'px');
     }
 
+    $.cookie('azr', 'the_value', { expires: 7, path: '/' });
+
 });
