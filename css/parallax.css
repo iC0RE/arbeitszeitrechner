@@ -1,0 +1,27 @@
+.fixed-parallax .image {
+  position: relative;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+}
+.fixed-parallax .image.one {
+  background-image: url("https://raw.githubusercontent.com/chrispxpx/codepen-poc-images/master/pxpx-rocket-black.png");
+}
+.fixed-parallax .image.two {
+  background-image: url("https://raw.githubusercontent.com/chrispxpx/codepen-poc-images/master/pxpx-rocket-black-invert.png");
+}
+.fixed-parallax .image.three {
+  background-image: url("https://raw.githubusercontent.com/chrispxpx/codepen-poc-images/master/pxpx-rocket-orange.png");
+}
+.fixed-parallax .image.four {
+  background-image: url("https://raw.githubusercontent.com/chrispxpx/codepen-poc-images/master/pxpx-rocket-orange-invert.png");
+}
+
+.content {
+  text-align: center;
+  padding: 50px 30px;
+  font-size: 1.25rem;
+  color: #fff;
+  background-color: rgba(240, 130, 20, 0.75);
+}
